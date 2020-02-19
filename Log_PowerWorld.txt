@@ -1,0 +1,138 @@
+Script: OpenCase("MCNPH1_PlayIn_RealPMU.PWB",PWB);
+Opening Case MCNPH1_PlayIn_RealPMU.PWB
+Reading PWB File, Version 20 (build 483)
+Reading case user names list and password
+Reading Schedules
+Reading Transient Distribution Equivalent
+Reading Bus Records
+Reading Transient Load Component
+Reading Transient Model Group
+Reading Load Records
+Reading Gen Records
+Reading Switched Shunt Records
+Reading Line Records
+Reading Area Records
+Reading Balancing Authority Records
+Reading DC Line Records
+Reading VSC DC Line Records
+Reading Zone Records
+Reading Substation Records
+Reading Injection Group Records
+Reading Facts Device Records
+Reading Nomogram Records
+Reading Connection Status Records
+Reading Oneline Options records
+Reading Bus View Customization records
+Reading Post Power Flow SolutionActions
+Reading Supplemental Classifications
+Reading Supplemental Data
+Reading Custom Field Descriptions
+Reading Time Step Actions
+Reading Case Options
+Validating Case
+Reading Environment Options
+Reading Dynamic Formatting Settings
+Reading Contingency Analysis Definitions and Results
+Reading OPF/SCOPF Solution Results
+Reading Hint Values
+Case loaded successfully.
+Initializing Solution Data Structures
+Initialization Complete
+Script: LoadAux("SetupAux.aux");
+-----------------------------------------------------------------------------------
+Starting load of auxiliary file: SetupAux.aux
+-----------------------------------------------------------------------------------
+Script: OpenCase("MCNPH1_PlayIn_RealPMU.PWB",PWB);
+Opening Case MCNPH1_PlayIn_RealPMU.PWB
+Reading PWB File, Version 20 (build 483)
+Reading case user names list and password
+Reading Schedules
+Reading Transient Distribution Equivalent
+Reading Bus Records
+Reading Transient Load Component
+Reading Transient Model Group
+Reading Load Records
+Reading Gen Records
+Reading Switched Shunt Records
+Reading Line Records
+Reading Area Records
+Reading Balancing Authority Records
+Reading DC Line Records
+Reading VSC DC Line Records
+Reading Zone Records
+Reading Substation Records
+Reading Injection Group Records
+Reading Facts Device Records
+Reading Nomogram Records
+Reading Connection Status Records
+Reading Oneline Options records
+Reading Bus View Customization records
+Reading Post Power Flow SolutionActions
+Reading Supplemental Classifications
+Reading Supplemental Data
+Reading Custom Field Descriptions
+Reading Time Step Actions
+Reading Case Options
+Validating Case
+Reading Environment Options
+Reading Dynamic Formatting Settings
+Reading Contingency Analysis Definitions and Results
+Reading OPF/SCOPF Solution Results
+Reading Hint Values
+Case loaded successfully.
+Initializing Solution Data Structures
+Initialization Complete
+Script: EnterMode(EDIT);
+DATA (BRANCH, [BUSNUM,BUSNAME,BUSNUM:1,BUSNAME:1,LINECIRCUIT,LINER,LINEX]):
+1 records read from file.
+DATA (BRANCH, [BUSNUM,BUSNAME,BUSNUM:1,BUSNAME:1,LINECIRCUIT,LINER,LINEX]):
+1 records read from file.
+DATA (GEN, [BUSNUM,BUSNAME,GENID,VOLTSET]):
+1 records read from file.
+DATA (BUS, [BUSNUM,BUSNAME,BUSPUVOLT,BUSANGLE]):
+1 records read from file.
+DATA (GEN, [BUSNUM,BUSNAME,GENID,VOLTSET,GENMW]):
+1 records read from file.
+Script: EnterMode(RUN);
+Validation of MCNPH1_PlayIn_RealPMU.PWB started at February 12, 2020 05:37:20
+Validation of MCNPH1_PlayIn_RealPMU.PWB completed with  0 errors and  0 warnings at February 12, 2020 05:37:20
+Script: SolvePowerFlow (RECTNEWT,"","");
+Number:   0 Max P:    3.016 at bus 44101 Max Q:  951.457 at bus 44115
+Number:   1 Max P:    0.049 at bus 44115 Max Q:    0.055 at bus 44101
+Finished voltage control loop iteration:   1
+Simulation: Successful Power Flow Solution
+-----------------------------------------------------------------------------------
+Finished load of auxiliary file: SetupAux.aux
+-----------------------------------------------------------------------------------
+Script: LoadAux("PlayInData.aux");
+-----------------------------------------------------------------------------------
+Starting load of auxiliary file: PlayInData.aux
+-----------------------------------------------------------------------------------
+DATA (PLAYIN, [TSNAME,             TSTIMEOFFSET], AUXDEF, YES):
+1 records read from file.
+DATA (PLAYININFO, [TSNAME,            TSSIGNALINDEX, TSINFONAME,       TSSCALE, TSFILTER], AUXDEF, YES):
+2 records read from file.
+DATA (PLAYINSIGNAL, [TSNAME,             TSTIME,  TSSIGNAL,  TSSIGNAL:1], AUXDEF, YES):
+1801 records read from file.
+-----------------------------------------------------------------------------------
+Finished load of auxiliary file: PlayInData.aux
+-----------------------------------------------------------------------------------
+Script: EnterMode(EDIT);
+Script: TSLoadGE("MCNPH1_PlayIn.dyd", NO, YES);
+Reading DYD GE Data Format
+Done Reading DYD GE Data Format
+Script: EnterMode(RUN);
+Validation of MCNPH1_PlayIn_RealPMU.PWB started at February 12, 2020 05:37:20
+Validation of MCNPH1_PlayIn_RealPMU.PWB completed with  0 errors and  0 warnings at February 12, 2020 05:37:20
+Script: TSSolveAll;
+Starting Solution using Rectangular Newton-Raphson
+Number:   0 Max P:    0.049 at bus 44115 Max Q:    0.055 at bus 44101
+Number:   1 Max P:    0.049 at bus 44115 Max Q:    0.055 at bus 44101
+Finished voltage control loop iteration:   1
+Solution Finished in     0.000 Seconds
+Simulation: Successful Power Flow Solution
+Validation Completed with 1 Warnings, 
+bus voltage is equal to zero; generator dynamic models set off
+Transient Stability Started at 2/12/2020 5:37:20 AM
+Transient Stability Solution Finished at 2/12/2020 5:37:20 AM
+Script: LogSave("Log_PowerWorld.txt");

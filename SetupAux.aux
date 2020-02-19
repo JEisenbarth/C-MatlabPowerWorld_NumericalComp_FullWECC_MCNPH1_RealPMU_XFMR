@@ -1,0 +1,37 @@
+SCRIPT
+{
+OpenCase("MCNPH1_PlayIn_RealPMU.PWB",PWB);
+EnterMode(EDIT);
+}
+
+DATA (Branch, [BusNum,BusName,BusNum:1,BusName:1,LineCircuit,LineR,LineX])
+{
+44122 "MCN PH1" 44115 "MCN TX1" 1 0 -0.00121
+}
+
+DATA (Branch, [BusNum,BusName,BusNum:1,BusName:1,LineCircuit,LineR,LineX])
+{
+44115 "MCN TX1" 44101 "MCN 01" 1 0.0041541 0.080986
+}
+
+DATA (GEN, [BusNum,BusName,GenID,VoltSet])
+{
+44122 "MCN PH1" 1 1.05940711145
+}
+
+DATA (Bus, [BusNum,BusName,BusPUVolt,BusAngle])
+{
+44122 "MCN PH1" 1.05940711145 0
+}
+
+DATA (GEN, [BusNum,BusName,GenID,VoltSet,GenMW])
+{
+44101 "MCN 01" 01 0.943021983866 50.4830663005
+}
+
+SCRIPT
+{
+EnterMode(RUN);
+SolvePowerFlow (RECTNEWT,"","");
+}
+

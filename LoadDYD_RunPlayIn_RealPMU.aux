@@ -1,0 +1,22 @@
+SCRIPT LoadDYD_RunPlayIn
+{
+//Clear Log
+LogClear;
+//Load Case
+OpenCase("MCNPH1_PlayIn_RealPMU.PWB",PWB);
+//Load SetupAux Aux File
+LoadAux("SetupAux.aux");
+//Load Aux File with PlayInData
+LoadAux("PlayInData.aux");
+//Enter Edit Mode
+EnterMode(EDIT);
+//Load Dyd File
+TSLoadGE("MCNPH1_PlayIn.dyd", NO, YES);
+//Enter Run Mode
+EnterMode(RUN);
+//Solve Dynamic Simulation
+TSSolveAll;
+//Save to Log
+LogSave("Log_PowerWorld.txt");
+}
+

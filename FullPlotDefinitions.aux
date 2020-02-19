@@ -1,0 +1,42 @@
+//--------------------------------------------------------------------------------
+// THE FOLLOWING ARE THE TRANSIENT STABILITY PLOT DEFINITIONS.
+//--------------------------------------------------------------------------------
+DATA (TSPlot, [PlotName,PLAutoShow,PLAutoTileSubPlots,PLVisible,PLVisible:1,ObjectMemo,
+   ObjectMemo:1,FileName,SOHeight,SOWidth,PLLocation,SOFontSize,PLIncludeTime,
+   WhenToSave,FileType,WidthInt,HeightInt,PLUseOption,DataMaintainerAssign],AUXDEF,YES)
+{
+"PlayInData" "Completion" "Down then Right" "NO " "YES" "" "" ""       15       50 "Bottom" 10 "YES" "Never" "WMF" 800 600 "NO " ""
+}
+
+DATA (TSSubPlot, [PlotName,SubPlotNum,PLVisible,PLColor,FileName,SOX,SOX:1,SOY,SOY:1,WhoAmI,
+   VariableName,PLAxisVisible,PLAxisVisible:1,PLInverted,PLLogarithmic,
+   SOFontSize:3,PLScaleInc,PLScaleAuto,PLScaleValue,PLScaleRound,PLScaleAuto:1,
+   PLScaleValue:1,PLScaleRound:1,PLCaptionVisible,PLCaptionText,SOFontSize,
+   FontColor,PLCaptionVisible:1,PLCaptionText:1,SOFontSize:1,FontColor:1,
+   PLCaptionVisible:2,PLCaptionText:2,SOFontSize:2,FontColor:2,PLAutoShow,
+   SOFontSize:4],AUXDEF,YES)
+{
+"PlayInData" 1 "YES" 16777215 ""     0.00   100.00     0.00   100.00 "" "" "YES" "YES" "NO " "NO "        8     0.00 "YES"     0.00 "NO " "YES"     0.00 "NO " "YES" ""       12       -1 "YES" ""       12       -1 "YES" ""       12       -1 "Default"        8
+}
+
+DATA (TSPlotVertAxisGroup, [PlotName,SubPlotNum,AxisGroupNum,PLAxisVisible,PLAxisVisible:1,PLInverted,
+   PLLogarithmic,Side,SOFontSize:1,PLScaleInc,PLScaleAuto,PLScaleValue,
+   PLScaleRound,PLScaleAuto:1,PLScaleValue:1,PLScaleRound:1,PLCaptionVisible,
+   PLCaptionText,SOFontSize,FontColor],AUXDEF,YES)
+{
+"PlayInData" 1 1 "YES" "YES" "NO " "NO " "Left"        8     0.00 "YES"     0.00 "NO " "YES"     0.00 "NO " "YES" ""       12       -1
+}
+
+DATA (TSPlotSeries, [PlotName,SubPlotNum,AxisGroupNum,WhoAmI,VariableName,UnitsType,PLStyle,PLVisible,
+   PLColor,PLThickness,SODashed,PLStairs,PLSymbolEvery,SymbolType,SOWidth,
+   SOHeight],AUXDEF,YES)
+{
+"PlayInData" 1 1 "Bus '44122'" "BusFrequencyinPU" "Actual" "Line" "YES" 16711680        1 "Solid" "No"        0 "Diamond"        5        5
+"PlayInData" 1 1 "Bus '44122'" "TSBusDegNoshift" "Actual" "Line" "YES"      255        1 "Solid" "No"        0 "Diamond"        5        5
+"PlayInData" 1 1 "Bus '44122'" "TSBusVPU" "Actual" "Line" "YES"    32768        1 "Solid" "No"        0 "Diamond"        5        5
+"PlayInData" 1 1 "Branch '44122' '44115' '1'" "TSACLineFromP" "Actual" "Line" "YES"  8421504        1 "Solid" "No"        0 "Diamond"        5        5
+"PlayInData" 1 1 "Branch '44122' '44115' '1'" "TSACLineFromQ" "Actual" "Line" "YES"  8388608        1 "Solid" "No"        0 "Diamond"        5        5
+"PlayInData" 1 1 "Branch '44122' '44115' '1'" "TSACLineToP" "Actual" "Line" "YES"      128        1 "Solid" "No"        0 "Diamond"        5        5
+"PlayInData" 1 1 "Branch '44122' '44115' '1'" "TSACLineToQ" "Actual" "Line" "YES"  8388736        1 "Solid" "No"        0 "Diamond"        5        5
+}
+
