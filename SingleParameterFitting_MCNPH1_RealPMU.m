@@ -116,11 +116,13 @@ ieeeg3(29)=0; %Pgv6
 index_ieeeg3=[1:5,7:13];     %Index for numerical parameters to edit
 
 %Model XFMR1
-XFMR1(1)= 0.000000; %XFMR1 R
+XFMR1(1)= 0.000000;  %XFMR1 R
 XFMR1(2)= -0.001210; %XFMR1 X
+XFMR1(3)= 0.001590;  %XFMR1 Mag Conductance
+XFMR1(4)= -0.005850; %XFMR1 Mag Susceptance
 
 
-index_XFMR1=[2];  %Index for numerical parameters to edit
+index_XFMR1=[2:4];  %Index for numerical parameters to edit
 
 %Model XFMR2
 XFMR2(1)= 0.0041541; %XFMR2 R
@@ -395,7 +397,7 @@ load(['D:\Users\JEisenbarth\Desktop\PowerWorld Files\',char(list(1))]);
             %         Q(2:end)=Q(2:end)+Qavg*PQ_offsetMult*(rand(1)-.5);
             
             P(1)=P(1)+Pavg*PQ_offsetMult/10*(rand(1)-.5);
-            Q(1)=Q(1)+Qavg*PQ_offsetMult*(rand(1)-.5);
+            Q(1)=Q(1)+Qavg*PQ_offsetMult/10*(rand(1)-.5);
             
 %             %         %Filter Plot Check
 %                     figure
